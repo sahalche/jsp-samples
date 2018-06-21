@@ -1,0 +1,27 @@
+<html>
+<title>tester</title>
+<body>
+<h1>Form Validtor</h1>
+<form name="myform" action="index.html" method="get" onsubmit="return validtor()">
+User name :<input type="text" name="user" required>
+<br>
+PassWord :<input type="password" name="pass">
+Submit <input type="submit" value="Done">
+<script>
+function validtor()
+
+{
+var user=document.myform.user.value;
+var password=document.myform.pass.value;
+if(password==null || password=="")
+{
+alert("password is not valid");
+return false;
+}
+
+}
+</script>
+
+</form>
+</body>
+</html>
