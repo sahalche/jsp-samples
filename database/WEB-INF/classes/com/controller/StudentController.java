@@ -20,14 +20,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
- 
+import org.apache.log4j.Logger;
 
 
 
 public class StudentController extends HttpServlet
 {
+	static Logger log = Logger.getLogger(StudentController.class.getName());
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
+		log.debug("working post method");
+      log.info("working post method");
 		System.out.println("working post method");
 		int id=Integer.valueOf(request.getParameter("id"));
 		int age=Integer.valueOf(request.getParameter("age"));
