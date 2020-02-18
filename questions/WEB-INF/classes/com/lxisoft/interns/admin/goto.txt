@@ -1,0 +1,16 @@
+<%
+if(c==4)
+{
+	%>
+	<h1><a href="Start.jsp">GO TO FIRST PAge</a href></h1>
+<%	
+}
+%>
+<%
+if (c<4) {
+	%>
+	<h1><a href="questionDisplay.jsp?id=<% out.println(c+1); %>">
+	
+Next Question</a href></h1>
+<%}
+%>

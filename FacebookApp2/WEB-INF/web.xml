@@ -1,0 +1,151 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+    <context-param> 
+    <description>destination storing uploaded file</description> 
+    <param-name>file-upload</param-name> 
+    <param-value>
+     images
+     </param-value> 
+</context-param> 
+	
+	
+	<security-constraint>
+      <web-resource-collection>
+     <web-resource-name>FacebookApp</web-resource-name>
+          <url-pattern>/LoginCheck.jsp/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+      </web-resource-collection>
+     <auth-constraint>
+            <role-name>admin</role-name>
+            <role-name>user</role-name>
+       </auth-constraint>
+  </security-constraint>
+   <security-role>
+      <role-name>admin</role-name>
+      <role-name>user</role-name>
+   </security-role>
+   
+   <login-config>
+      <auth-method>FORM</auth-method>
+      <form-login-config>
+         <form-login-page>/UserLogin.jsp</form-login-page>
+       </form-login-config>
+       <realm-name>security</realm-name>
+   </login-config>
+         
+         <error-page>
+        <error-code>404</error-code>
+        <location>/Error404.jsp</location>
+</error-page>
+<error-page>
+        <error-code>503</error-code>
+        <location>/Error503.jsp</location>
+</error-page>
+<error-page>
+    <error-code>401</error-code>
+    <location>/Error401.jsp</location>
+</error-page>
+<error-page>
+    <error-code>403</error-code>
+    <location>/Error403.jsp</location>
+</error-page>>
+	<servlet>
+		<servlet-name>QuestionController</servlet-name>
+		<servlet-class>com.lxisoft.facebookApp2.controller.QuestionController</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>outputServlet</servlet-name>
+		<servlet-class>com.lxisoft.facebookApp2.controller.OutputServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>QuestionController</servlet-name>
+		<url-pattern>/question</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>outputServlet</servlet-name>
+		<url-pattern>/outputServlet</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>Register.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<description></description>
+		<display-name>RegisterServlet</display-name>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>com.lxisoft.facebookApp2.controller.RegisterServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/RegisterServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.lxisoft.facebookApp2.controller.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/AdminServlet</url-pattern>
+    </servlet-mapping>
+	
+	
+	 <servlet>
+        <servlet-name>EditServlet</servlet-name>
+        <servlet-class>com.lxisoft.facebookApp2.controller.EditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditServlet</servlet-name>
+        <url-pattern>/EditServlet</url-pattern>
+    </servlet-mapping>
+	
+	
+	
+	
+	<servlet>
+        <servlet-name>UpdateServlet</servlet-name>
+        <servlet-class>com.lxisoft.facebookApp2.controller.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateServlet</servlet-name>
+        <url-pattern>/UpdateServlet</url-pattern>
+    </servlet-mapping>
+	<servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>com.lxisoft.facebookApp2.controller.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+	
+	
+	<servlet>
+        <servlet-name>SelectUserServlet</servlet-name>
+        <servlet-class>com.lxisoft.facebookApp2.controller.SelectUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectUserServlet</servlet-name>
+        <url-pattern>/SelectUserServlet</url-pattern>
+    </servlet-mapping>
+	<servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.lxisoft.facebookApp2.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+</web-app>

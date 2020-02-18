@@ -1,0 +1,30 @@
+<%
+/*answer="0";
+answer=request.getParameter("answer");
+int p=ad.check(answer,i);
+if (p==1){
+	out.println("correct answer");
+}
+else{
+	out.println("incorrect");
+}
+out.println(p);
+%>
+
+
+int p =ad.check(a,i);
+if (p==1){
+	out.println("correct answer");
+}
+else{
+	out.println("incorrect");
+}
+out.println(p);
+%>
+
+<input type="hidden" name="id" value="<%out.print((i+1));%>"/>=======For loop
+
+
+
+
+String id=request.getParameter("id");

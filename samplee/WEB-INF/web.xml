@@ -1,0 +1,19 @@
+
+<web-app>
+ 
+
+	<servlet>
+		<servlet-name>QuestionController</servlet-name>
+		<servlet-class>com.QuestionController</servlet-class>
+	</servlet>
+	
+	
+	
+	<servlet-mapping>
+		<servlet-name>QuestionController</servlet-name>
+		<url-pattern>/question</url-pattern>
+	</servlet-mapping>
+	
+	
+		
+</web-app>

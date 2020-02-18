@@ -1,0 +1,73 @@
+
+public ArrayList<Student> findAll() {
+		ArrayList<Student> studentList=new ArrayList<Student>();
+		try {
+			
+			this.dataBaseConnectionEstablish();
+			String sql;
+			sql="SELECT * FROM students";
+			ResultSet rs=statement.executeQuery(sql);
+			while (rs.next()) {
+				Student student=new Student();
+				student.id=rs.getInt(1);
+				student.name=rs.getString(2);
+				student.age=rs.getInt(3);
+				student.place=rs.getString(4);
+				student.fis=rs.getBinaryStream(5);
+				studentList.add(student);
+				
+			}
+			connection.close();
+
+		} catch (SQLException e) {
+			
+			
+			
+			e.printStackTrace();
+		}
+		if(studentList==null)
+		{
+		return null;
+		}
+		return studentList;
+		
+	}*/
+	
+	
+	
+	////******
+	
+	response.setContentType("image/jpg");
+OutputStream o = response.getOutputStream();
+o.write(imgData);
+o.flush();
+o.close();
+} catch (Exception e) {
+out.println("Unable To Display image");
+out.println("Image Display Error=" + e.getMessage());
+return;
+} finally {
+try {
+rs.close();
+stmt.close();
+con.close();
+} catch (SQLException e) {
+e.printStackTrace();
+}
+}
+	//////*****
+	
+	
+	/*
+	<img src="<%= o.write(list.get(0).imageData); o.flush(); o.close(); %>">
+	
+	*/
+	
+	/*
+	response.setContentType("text/html");
+PrintWriter pw=response.getWriter();
+	*/
+	
+request.setAttribute("student",s);
+RequestDispatcher view=request.getRequestDispatcher("/imageUrl");
+view.forward(request,response);

@@ -13,10 +13,10 @@ if((user)!=null)
 %>
 <form action="controller" method="post">
 <% out.println("User Name"); %>
-<input type="text" name="username" value="<%=user.userName%>">
+<input type="text" name="username">
 <br>
 <% out.println("Password");%>
-<input type="password" name="password" <%=user.password%>>
+<input type="password" name="password">
 <br>
 <% String status=request.getParameter("status");
 
